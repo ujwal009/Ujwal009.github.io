@@ -126,12 +126,11 @@ var webusbfunc=()=>{
                   
 				  */
                   
-				 var a1 = device.bNumInterfaces;
-				 var a2= device.bNumConfigurations;
-				 
-                  alert("bNumInterfaces" + a1);
-				  
-				  alert("bNumConfigurations" + a2);
+
+			
+		  var v13 = device.productName;
+                  alert("productName " + v13);
+
 				  
                   return device.open(); 
                 })
@@ -145,6 +144,13 @@ var webusbfunc=()=>{
                     value: 0x0013 ,
                     index: 0x0002 
                     })
+			
+						
+              	 var a1 = device.bNumInterfaces;
+		 var a2= device.bNumConfigurations;	 
+			
+                 alert("bNumInterfaces" + a1);
+		 alert("bNumConfigurations" + a2);
                 })
                 .then(()=>{
                     console.log(device.configuration.interfaces[2]);
