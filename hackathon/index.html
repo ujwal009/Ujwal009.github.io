@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script type="text/javascript" src="js/hackathon.js"></script>
+<link rel="stylesheet" href="css/hackathon.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body style = "background:#e7e8e8;">
+
+
+<div style = "text-align:center;">
+<h1>WyseWin Stunners welcomes you all<h1>
+<h2>WEBUSB Redirection to the Server</h2>
+</div>
+
+<div style = "text-align:center;margin-top:65px;">
+<div> 
+ <iframe allowpaymentrequest allowfullscreen='usb'></iframe>
+</div>
+<button onclick="webusbfunc()" style="width:auto;">Select WebUsb</button>
+</div>
+
+<div style = "text-align:center;margin-top:118px;">
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Please click here to enter server details</button>
+</div>
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="images/dellLogo.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>VM's IP Address</b></label>
+      <input id = "ipAddr" type="text" placeholder="Enter IP address" name="uname" required>
+
+      <label for="port"><b>TCX Server port (Default:17185)</b></label>
+      <input id = "portNo" type="text" placeholder="Please enter Default port" name="port" required>
+        
+      <label for="sessionId"><b>Session Id</b></label>
+      <input id = "sessionNo" type="text" placeholder="Enter Session Id" name="sessionId" required>
+      
+        
+      <div id="containerShield" style = "text-align:center;">
+         
+          <button style = "width: 300px;height: 40px;" id="btnGetValues" type="button">Connect</button>
+          <button style = "width: 300px;height: 40px;" id="reset" type="button">reset</button> 
+           
+      </div>
+      
+    
+
+      <!-- <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label> -->
+
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <!--<span class="psw">Forgot <a href="#">password?</a></span>-->
+    </div>
+  </form>
+</div>
+
+
+</body>
+</html>

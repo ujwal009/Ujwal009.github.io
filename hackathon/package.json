@@ -1,0 +1,14 @@
+{
+  "name": "hack",
+  "version": "0.0.1",
+  "main": "index.html",
+  "chromium-args" : "--allow-file-access-from-files",
+   "window": {
+    "title": "hack",
+    "toolbar": true,
+    "frame": true,
+    "show_in_taskbar": true,
+
+   "kiosk": false // set kiosk mode true for full screen
+  }
+}
