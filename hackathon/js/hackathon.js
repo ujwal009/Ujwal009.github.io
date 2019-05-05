@@ -129,7 +129,7 @@ var webusbfunc=()=>{
 
 			
 		  var v13 = device.productName;
-                  alert("productName " + v13);
+                  alert("Here.ProductName " + v13);
 
 				  
                   return device.open(); 
@@ -145,7 +145,8 @@ var webusbfunc=()=>{
                     index: 0x0002 
                     })
 			
-						
+		 alert("REACHED HERE...");	
+			
               	 var a1 = device.bNumInterfaces;
 		 var a2= device.bNumConfigurations;	 
 			
