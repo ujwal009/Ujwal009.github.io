@@ -37,7 +37,7 @@ var webusbfunc=()=>{
                   
                   device = selectedDevice;
                          
-                  /*
+                  
                   var v10 = device.vendorId;
                   devicedesc[0]=device.vendorId;
                   alert("vendorId" + v10);
@@ -124,14 +124,8 @@ var webusbfunc=()=>{
                   
                   alert(concatfordevice);
                   
-				  */
-                  
-
-			
-		  var v13 = device.productName;
-                  alert("Here.ProductName " + v13);
-
 				  
+                  		  
                   return device.open(); 
                 })
                 .then(()=>device.selectConfiguration(1))
@@ -147,18 +141,23 @@ var webusbfunc=()=>{
 			
 		 alert("REACHED HERE...");	
 			
-              	 var a1 = device.bNumInterfaces;
-		 var a2= device.bNumConfigurations;	 
-			
-                 alert("bNumInterfaces" + a1);
-		 alert("bNumConfigurations" + a2);
+
                 })
                 .then(()=>{
-                    console.log(device.configuration.interfaces[2]);
+		  var a1 = device.bNumInterfaces;
+		  var a2= device.bNumConfigurations;	 
+			
+                  alert("bNumInterfaces" + a1);
+		  alert("bNumConfigurations" + a2);
+			
+                    alert("WORK" + device.configuration.interfaces[2]);
+			
                     let result=device.transferIn(5,64);
-                    alert(result);
+			
+                    Console.log(result);
+			
                     let decoder = new TextDecoder();
-                    alert('Received: ' + decoder.decode(result.data));
+                    Console.log('Received: ' + decoder.decode(result.data));
                 })
                 .catch(error => {console.log(error);})
 
