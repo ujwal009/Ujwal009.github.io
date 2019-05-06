@@ -36,9 +36,9 @@ var webusbfunc=()=>{
                 .then(selectedDevice => {
                   
                   device = selectedDevice;
-                  var v30 = device.bDescriptorType;
+                  var v30 = device.DescriptorType;
                  
-                  alert("DescriptorType" + v30);
+                  alert("DescriptorType.." + v30);
 					  
                   /*
                   var v10 = device.vendorId;
