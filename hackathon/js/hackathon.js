@@ -159,9 +159,9 @@ var webusbfunc=()=>{
 		    
 			
                     let result=device.transferIn(5,64);
-                    Console.log(result);
+                    //console.log(result);
                     let decoder = new TextDecoder();
-                    Console.log('Received: ' + decoder.decode(result.data));
+                  //  console.log('Received: ' + decoder.decode(result.data));
 					
 		    alert("REACHED HERE...2");
 			
