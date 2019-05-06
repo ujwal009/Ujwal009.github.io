@@ -23,8 +23,8 @@ $('#btnGetValues').click(function () {
 
 // Webusb API to detect the USB on Web
 var webusbfunc=()=>{
-
-                         var device;
+	                
+                var device;
                   
                 var devicedesc=new Array();
 				var configdesc=new Array();
@@ -36,8 +36,9 @@ var webusbfunc=()=>{
                 .then(selectedDevice => {
                   
                   device = selectedDevice;
-                         
-                  
+                      
+					  
+                  /*
                   var v10 = device.vendorId;
                   devicedesc[0]=device.vendorId;
                   alert("vendorId" + v10);
@@ -124,8 +125,18 @@ var webusbfunc=()=>{
                   
                   alert(concatfordevice);
                   
+				  */
+                 
+				  alert("REACHED HERE...5");
+				 
+				  var a1 = device.bInterfaceNumber;
+				  var a2= device.bNumConfigurations;
 				  
-                  		  
+				 
+                  alert("bNumInterfaces" + a1);
+				  
+				  alert("bNumConfigurations" + a2);
+				  
                   return device.open(); 
                 })
                 .then(()=>device.selectConfiguration(1))
@@ -138,28 +149,20 @@ var webusbfunc=()=>{
                     value: 0x0013 ,
                     index: 0x0002 
                     })
-			
-		 alert("REACHED HERE...");	
-			
-
                 })
                 .then(()=>{
-		  var a1 = device.bNumInterfaces;
-		  var a2= device.bNumConfigurations;	 
-			
-                  alert("bNumInterfaces" + a1);
-		  alert("bNumConfigurations" + a2);
-			
-                    alert("WORK" + device.configuration.interfaces[2]);
-			
+					alert("REACHED HERE...1");
+					
+                    console.log(device.configuration.interfaces[2]);
+					alert(device.configuration.interfaces[2]);
+					
                     let result=device.transferIn(5,64);
-			
                     Console.log(result);
-			
                     let decoder = new TextDecoder();
                     Console.log('Received: ' + decoder.decode(result.data));
+					
+					alert("REACHED HERE...2");
                 })
                 .catch(error => {console.log(error);})
-
 
 }
