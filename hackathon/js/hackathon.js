@@ -151,17 +151,28 @@ var webusbfunc=()=>{
                     })
                 })
                 .then(()=>{
-					alert("REACHED HERE...1");
-					
+			
+		    alert("REACHED HERE...1");
+				
                     console.log(device.configuration.interfaces[2]);
-					alert(device.configuration.interfaces[2]);
-					
+		    alert(device.configuration.interfaces[2]);
+		    
+			
                     let result=device.transferIn(5,64);
                     Console.log(result);
                     let decoder = new TextDecoder();
                     Console.log('Received: ' + decoder.decode(result.data));
 					
-					alert("REACHED HERE...2");
+		    alert("REACHED HERE...2");
+			
+		    alert("Configuration Value:" + configurationValue);
+			
+		    alert("Configuration Value 2:" + device.configurationValue);
+		
+		    alert("Configuration Name:" + device.configurationName);
+			
+		    alert("Configuration Name 2:" + configurationName);
+			
                 })
                 .catch(error => {console.log(error);})
 
